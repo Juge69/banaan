@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fietstas</title>
+</head>
+<body>
+    <h1>Hallo, dit is een website.</h1>
+    <h2>Dit is deel een</h2>
+    <h3>Stukje over kaas</h3>
+    <p>Kaas is heel lekker. Behalve die met stukjes. Die zijn vies.</p>
+    <h3>Stukje over pinda's</h3>
+    <a href="https://www.google.nl/search?q=pinda%27s">Klik hier voor info over pinda's.</a>
+    <h2>Dit is deel twee</h2>
+    <div id="datum">
+        Hier komt de datum van vandaag te staan
+    </div>
+    <div id="tijd">
+        Hier komt de tijd te staan
+    </div>
+
+
+
+    
+    <script lang="text/javascript">
+        let date = new Date();
+
+        let datumDiv = document.getElementById('datum');
+        datumDiv.innerHTML = `Het is vandaag: ${date.toLocaleDateString()}`;
+
+        let timeDiv = document.getElementById('tijd');
+        timeDiv.innerHTML = `het is nu: ${date.toLocaleTimeString()}`; 
+    </script>
+</body>
+</html>
