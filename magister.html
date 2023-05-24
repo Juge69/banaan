@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="nl-nl">
+    <head>
+        <title data-ng-bind-template="{{pageTitle}}">Magister</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/x-icon" href="assets/images/appicon-1.png" sizes="16x16">
+        <link rel="icon" type="image/x-icon" href="assets/images/appicon-2.png" sizes="32x32">
+        <link rel="icon" type="image/x-icon" href="assets/images/appicon-3.png" sizes="48x38">
+        <link rel="icon" type="image/x-icon" href="assets/images/appicon-4.png" sizes="64x64">
+        <link rel="icon" type="image/x-icon" href="assets/images/appicon-5.png" sizes="128x128">
+        <link rel="icon" type="image/x-icon" href="assets/images/appicon-6.png" sizes="256x256">
+        <script type="text/javascript">
+            performance.mark("app-load-started");
+        </script>
+        <script type="text/javascript">
+            if (window.document.documentMode || navigator.userAgent.toLocaleLowerCase().indexOf("edge") > -1) {
+                window.location.href = '/unsupported-browser.html'
+            }
+        </script>
+        <script src="/oidc/client/oidc-client.min.js?_v=1.4.1"></script>
+        <script src="/oidc_config.js"></script>
+        <script src="settings.js"></script>
+        <style>
+            :root {
+                --chrome-background: #fff;
+                --primary-background: #1f97f9;
+                --secondary-background: #0683ea;
+                --background-1: #0099f6;
+                --background-2: #fff;
+                --background-3: #ccc;
+                --background-4: #434343;
+                --background-5: #fafafa;
+                --background-6: #333;
+                --background-7: #f2f2f2;
+                --background-8: #ccc;
+                --background-9: transparent;
+                --background-10: #005c86;
+                --background-11: #e1f4fd;
+
+                --primary-text-color: #1f97f9;
+                --secondary-text-color: #000;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+            }
+
+            .container {
+                display: flex;
+                height: 100vh;
+            }
+
+            .appbar-host {
+                width: 64px;
+                min-width: 64px;
+                background: var(--secondary-background);
+            }
+
+            .menu-host {
+                width: 240px;
+                min-width: 240px;
+                position: relative;
+                background: var(--primary-background);
+                transition: all .25s ease-out;
+            }
+
+            .menu-host .logo {
+                position: absolute;
+                left: 16px;
+                top: 32px;
+            }
+
+            .menu-host .logo a {
+                display: flex;
+                height: 40px;
+                align-items: center;
+            }
+
+            .menu-host .logo a .logo-expanded {
+                width: 168px;
+                margin-left: 6px;
+            }
+
+            .menu-host .logo a .logo-collapsed {
+                margin-bottom: 5px;
+                width: 40px;
+            }
+
+            .collapsed-menu {
+                width: 64px;
+                min-width: 65px;
+            }
+
+            .container>ui-view {
+                flex-grow: 1;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-bottom: 24px;
+                padding-top: 80px;
+                position: relative;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+            }
+            .view {
+                flex-grow: 1;
+            }
+            .animation-container-loading {
+                display: flex;
+                height: 100vh;
+            }
+            .animation-loading-indicator {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+            .loading-animation {
+                width: 10%;
+                height: auto;
+            }
+            @media print {
+                .appbar-host {
+                    display: none;
+                }
+
+                .menu-host {
+                    display: none;
+                }
+            }
+        </style>
+    <meta name="buildDate" content="2023-05-01T06:34:54.843Z"><meta name="release" content="true"><link href="styles.bed5931cd23fdcd947cf.css" rel="stylesheet"><link href="print.bed5931cd23fdcd947cf.css" rel="stylesheet" media="print"></head>
+    <body>
+        
+        <div class="container ng-cloak" ng-class="{'ng-cloak': $root.isLoading}">
+            <div data-sm-toast="toasts"></div>
+            <div data-sm-dialog="dialog"></div>
+            <div class="appbar-host">
+                <mg-appbar></mg-appbar>
+            </div>
+            <div class="menu-host" ng-class="{'collapsed-menu': !$root.menuExpanded}">
+                <div class="logo">
+                    <a href="{{vandaagUrl}}">
+                        <img ng-if="$root.menuExpanded" class="logo-expanded" ng-src="assets/images/logo-magister-white.svg">
+                        <img class="ng-cloak logo-collapsed" ng-class="{'ng-cloak': $root.menuExpanded}"
+                          ng-src="assets/images/logo-m-white.svg">
+                    </a>
+                </div>
+                <div data-sm-menu="menu" class="menu"></div>
+            </div>
+            <div data-ng-view="ng-view" class="view"></div>
+        </div>
+        <div class="animation-container-loading" ng-class="{'ng-cloak': !$root.isLoading}">
+            <div class="animation-loading-indicator">
+                <img src="assets/fonts/loader-m-blue-short.svg" class="loading-animation" alt="laden...">
+            </div>
+        </div>
+        <mg-speech-bubble></mg-speech-bubble>
+        <mg-product-switch ng-if="$root.isProductswitchVisible"></mg-product-switch>
+        <mg-old-browser-message></mg-old-browser-message>
+
+        <link rel="stylesheet" href="//use.typekit.net/zkq0zzv.css">
+        <script type="text/javascript">
+            (function(window, document, dataLayerName, id) {
+            window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+            function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
+            var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+            var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+            tags.async=!0,tags.src="//iddinkgroup.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+            !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+            })(window, document, 'dataLayer', window.globalSettings.piwikID);
+        </script>
+
+    <script type="text/javascript" src="app.bed5931cd23fdcd947cf.js"></script></body>
+</html>
