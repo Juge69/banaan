@@ -1,6 +1,7 @@
 <head>
     <title>FF7 thoughts</title>
 </head>
+<body style="background-color:bisque;color:gray;">
 <h7>The games story
     <P>FF7 is one of my favorite games of al time, and with good reason! It has some beautiful game design
         and a really nice story. You play as a character called cloud strife, who was born and raised in a
@@ -32,3 +33,30 @@
         all the secrets.
     </p>
 </h7>
+<div id="datum">
+    Today's date, EU time
+</div>
+<div id="tijd">
+    Today's time, EU time
+</div>
+
+<script lang="text/javascript">
+    let date = new Date();
+
+    let datumDiv = document.getElementById('datum');
+    datumDiv.innerHTML = `Todays date: ${date.toLocaleDateString()}`; 
+
+    let timeDiv = document.getElementById('tijd');
+    timeDiv.innerHTML = `Todays time: ${date.toLocaleTimeString()}`; 
+</script>
+</p>
+<a href="https://www.youtube.com/@4-8Productions">
+<button>for the tutorials and info about ffVII and more</button>
+</a>
+<a href="https://www.youtube.com/watch?v=tvBCjyJZWwY&t=612s">
+<button>Materia combination information station</button>
+</a>
+<a href="https://www.youtube.com/watch?v=XYnMJ06bc-Q">
+    <button>Iceberg video</button>
+</a>
+</body>
