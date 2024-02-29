@@ -1,0 +1,1 @@
+<><p id='demo' style='display: none'>Hello Javascript</p><button type='button' onclick="toggleText()">Click me</button></>
