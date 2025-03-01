@@ -1,8 +1,11 @@
 <head>
     <title>FF7 thoughts</title>
+    <link rel="stylesheet" href="../CSS/ff7.css">
 </head>
 <body {min-height:100vh} style="background-color:floralwhite;color:black;">
-<img style="position:relative; left: 400px" src="../Pictures/final-fantasy-vii-logo-png-transparent.png" alt="200" height="200" width="400" >
+<header>
+    <img class="logo" src="../Pictures/final-fantasy-vii-logo-png-transparent.png">
+</header>
     <h1>The games story</h1>
     <P>FF7 is one of my favorite games of al time, and with good reason! It has some beautiful game design
         and a really nice story. You play as a character called cloud strife, who was born and raised in a
@@ -54,13 +57,17 @@
 </div>
 
 <script lang="text/javascript">
-    let date = new Date();
+    function updateTime(){
+        let date = new Date();
+    
+        let datumDiv = document.getElementById('date');
+        datumDiv.innerHTML = `Todays date: ${date.toLocaleDateString()}`;
+    
+        let timeDiv = document.getElementById('time');
+        timeDiv.innerHTML = `Todays time: ${date.toLocaleTimeString()}`; 
+    }
 
-    let datumDiv = document.getElementById('date');
-    datumDiv.innerHTML = `Todays date: ${date.toLocaleDateString()}`;
-
-    let timeDiv = document.getElementById('time');
-    timeDiv.innerHTML = `Todays time: ${date.toLocaleTimeString()}`; 
+    setInterval(updateTime, 1000);
 </script>
 </p> <!--the text above here is how to get time to work, it will update everytime the page is reloaded-->
 <a href="https://www.youtube.com/@4-8Productions">
@@ -76,21 +83,46 @@
     <button style="color: coral;background-color:teal;">Get in touch with the community</button>
 </a>
 
-<img src="../Pictures/Cloud-ffvii-battle.webp" alt="">
-<h1>(picture of cloud)</h1>
-<img src="../Pictures/Tifa-FFVII-battle.webp" alt="" height="200">
-<h1>(Picture of Tifa)</h1>
-<img style="position:relative;" src="../Pictures/Barret-ffvii-battle.webp" alt="" height="200">
-<h1>(Picture of Barret)</h1>
-<img src="../Pictures/Aeris-ffvii-battle.webp" alt="" height="200">
-<h1>(picture of Aeris/Aerith)</h1>
-<img src="../Pictures/CaitSith-ffvii-battle.webp" alt="" height="200">
-<h1>(Picture of Cait sith) (no one likes this fellow)</h1>
-<img src="../Pictures/Vincent-ffvii-battle.webp" alt="" height="200">
-<h1>(Picture of Vincent)</h1>
-<img src="../Pictures/Mystery_Ninja_FF7.webp" alt="" height="200">
-<h1>(Picture of Yuffie)</h1>
-<p>Those are all playable characters in the game, But wait... there is one more?</p>
-<img src="../Pictures/MediumElatedIrrawaddydolphin-size_restricted.gif" alt="">
-<p><!--These img can only be accessed if the image file is in the same file as this code space. style can be changed if its in the same space as the <body> sign! --></p>
+<div class="gallery">
+    <div class="party1">
+        <div class="cloud">
+            <img src="../Pictures/Cloud-ffvii-battle.webp" alt="" height="300">
+            <h1>(picture of cloud)</h1>
+        </div>
+        <div class="tifa">
+            <img src="../Pictures/Tifa-FFVII-battle.webp" alt="" height="300" class="image-tifa">
+            <h1>(Picture of Tifa)</h1>
+        </div>
+        <div class="barret">
+            <img style="position:relative;" src="../Pictures/Barret-ffvii-battle.webp" alt="" height="300">
+            <h1>(Picture of Barret)</h1>
+        </div>
+    </div>
+    <div class="party2">
+        <div class="aeris">
+            <img src="../Pictures/Aeris-ffvii-battle.webp" alt="" height="300">
+            <h1>(picture of Aeris/Aerith)</h1>
+        </div>
+        <div class="red">
+            <img src="../Pictures/CaitSith-ffvii-battle.webp" alt="" height="300">
+            <h1>(Picture of Cait sith) </h1>
+        </div>
+        <div class="vincent">
+            <img src="../Pictures/Vincent-ffvii-battle.webp" alt="" height="300">
+            <h1>(Picture of Vincent)</h1>
+        </div>
+        <div class="yuffie">
+            <img src="../Pictures/Mystery_Ninja_FF7.webp" alt="" height="300">
+            <h1>(Picture of Yuffie)</h1>
+        </div>
+    </div>
+
+    <p><!--These img can only be accessed if the image file is in the same file as this code space. style can be changed if its in the same space as the <body> sign! --></p>
+</div>
+<div class="extra">
+    <div class="war-hero">
+        <p>Those are all playable characters in the game, But wait... there is one more?</p>
+        <img src="../Pictures/MediumElatedIrrawaddydolphin-size_restricted.gif" alt="" class="legendary-war-hero">
+    </div>
+</div>
 </body>

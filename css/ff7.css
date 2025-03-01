@@ -1,0 +1,46 @@
+header{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+     height: 200; 
+     width: 400;
+}
+
+.gallery{
+    display: column;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+.party1{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.party2{
+    display: flex;
+    justify-self: center;
+    gap: 30px;
+    margin-left: 160px;
+}
+.image-tifa{
+    margin-left: 50px;
+}
+.extra{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.war-hero{
+    display: column;
+
+}
+.legendary-war-hero{
+    margin-left: 50px;
+}
