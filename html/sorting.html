@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let getallen = [2, 4, 1, 3, 5, 8, 6, 7, 10, 9];
+    const users = [
+  { firstname: "Robin", lastname: "van der Ploeg" },
+  { firstname: "Julian", lastname: "Gerrits" },
+  { firstname: "Jesse", lastname: "van der Sar" },
+  { firstname: "Jesse", lastname: "van der Ploeg" },
+  { firstname: "Robin", lastname: "Gerrits" },
+  { firstname: "Julian", lastname: "van der Sar" },
+  { firstname: "Jesse", lastname: "Gerrits" },
+  { firstname: "Robin", lastname: "van der Sar" },
+  { firstname: "Julian", lastname: "van der Ploeg" }
+];
+
+    // Function to sort numbers in ascending order
+    function sorteerOplopend(a, b) {
+        return a - b; // If a is less than b, it returns a negative value, so a comes before b
+    }
+
+    // Function to sort numbers in descending order
+    function sorteerAflopend(a, b) {
+        return b - a; // If b is less than a, it returns a negative value, so b comes before a
+    }
+
+    // Event listener for keydown events
+    window.addEventListener("keydown", function (event) {
+        if (event.key == "1") {
+            getallen.sort(sorteerOplopend); // Sort array in ascending order when "1" is pressed
+            console.log(getallen); // Log the sorted array
+        }
+        if (event.key == "2") {
+            getallen.sort(sorteerAflopend); // Sort array in descending order when "2" is pressed
+            console.log(getallen); // Log the sorted array
+        }
+        if (event.key == "3") {
+            users.sort((a, b) => a.firstname.localeCompare(b.firstname)); // Sort array of objects by firstname
+            console.log(users); // Log the sorted array
+        }
+        if (event.key == "4") {
+            users.sort((a, b) => a.lastname.localeCompare(b.lastname)); // Sort array of objects by lastname
+            console.log(users); // Log the sorted array
+        }
+    });
+
+</script>
+</html>
