@@ -1,11 +1,11 @@
+let answer = null;
 let randomEquation = () => {
     let num1, num2;
     do {
-        num1 = Math.floor(Math.random() * 10);
-        num2 = Math.floor(Math.random() * 10);
+        num1 = Math.floor(Math.random() * 100);
+        num2 = Math.floor(Math.random() * 100);
     } while (num1 < num2);
 
-    let answer;
     let operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
     switch (operator) {
         case '+':
