@@ -32,9 +32,11 @@ let randomEquation = () => {
 
     let playerAnswer = prompt(`What is ${num1} ${operator} ${num2}? (in case of a division, round to 2 decimal places)`);
     if (parseFloat(playerAnswer) === answer) {
+        alert('Correct!');
         console.log('Correct!');
         randomEquation();
     } else {
+        alert('Incorrect!');
         console.log('Incorrect!');
         randomEquation();
     }
