@@ -1,0 +1,11 @@
+﻿THIS IS A DEMONSTRATION FILE
+---------------------------
+User: Juge
+Computer: JUGE-MACHINE
+Time: 12/20/2025 15:51:03
+
+No real data was accessed.
+No data was transmitted.
+
+If this were malicious software,
+sensitive data could have been collected silently.
